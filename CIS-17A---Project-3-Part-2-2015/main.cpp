@@ -24,9 +24,17 @@ int main()
 			case 3:
 			{
 				auto newcurrent = NavigateToFolder(currentFolder); 
-				parentFolder = currentFolder;
-				currentFolder = newcurrent;
-				cout << endl << "Now in folder " << newcurrent->getName() << "!";
+ 				if (newcurrent != nullptr)
+				{
+					parentFolder = currentFolder;
+					currentFolder = newcurrent;
+					cout << endl << "Now in folder " << newcurrent->getName() << "!";
+				}
+				else
+				{
+					cout << endl << "Now in folder " << currentFolder->getName() << "!";
+				}
+				
 				break;
 			}
 			case 5: 
